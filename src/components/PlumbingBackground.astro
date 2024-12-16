@@ -1,0 +1,99 @@
+---
+interface Props {
+    className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<div class={`plumbing-background ${className}`}>
+    <div class="water-drop"></div>
+    <div class="water-drop"></div>
+    <div class="water-drop"></div>
+    <div class="pipe-pattern"></div>
+</div>
+
+<style>
+    .plumbing-background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        pointer-events: none;
+    }
+
+    .water-drop {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: radial-gradient(circle at 50% 40%, 
+            rgba(41, 128, 185, 0.2),
+            rgba(41, 128, 185, 0.1));
+        border-radius: 50%;
+        filter: blur(1px);
+        animation: dropFall 4s infinite linear;
+    }
+
+    .water-drop:nth-child(1) {
+        left: 20%;
+        animation-delay: 0s;
+    }
+
+    .water-drop:nth-child(2) {
+        left: 50%;
+        animation-delay: 1.5s;
+    }
+
+    .water-drop:nth-child(3) {
+        left: 80%;
+        animation-delay: 3s;
+    }
+
+    .pipe-pattern {
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(45deg, 
+                rgba(41, 128, 185, 0.07) 25%, 
+                transparent 25%, 
+                transparent 75%, 
+                rgba(41, 128, 185, 0.07) 75%, 
+                rgba(41, 128, 185, 0.07)),
+            linear-gradient(-45deg, 
+                rgba(41, 128, 185, 0.07) 25%, 
+                transparent 25%, 
+                transparent 75%, 
+                rgba(41, 128, 185, 0.07) 75%, 
+                rgba(41, 128, 185, 0.07));
+        background-size: 80px 80px;
+        animation: pipeMove 40s linear infinite;
+    }
+
+    @keyframes dropFall {
+        0% {
+            transform: translateY(-100%) scale(1);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(1000%) scale(0.8);
+            opacity: 0;
+        }
+    }
+
+    @keyframes pipeMove {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 80px 80px;
+        }
+    }
+</style>

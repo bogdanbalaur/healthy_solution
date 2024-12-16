@@ -1,0 +1,102 @@
+---
+import ServiceCard from './ServiceCard.astro';
+import PlumbingBackground from './PlumbingBackground.astro';
+
+const services = [
+    {
+        title: "Consultanță GRATUITĂ",
+        description: "Te ajutăm să alegi cele mai eficiente echipamente pentru locuința sau afacerea ta.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>`
+    },
+    {
+        title: "Instalații Gaz",
+        description: "Servicii complete de instalare, verificare și mentenanță pentru instalații de gaz.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>`
+    },
+    {
+        title: "Reparații Instalații",
+        description: "Reparații rapide și eficiente pentru toate tipurile de instalații.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+        </svg>`
+    },
+    {
+        title: "Instalații Sanitare",
+        description: "Montaj și reparații pentru instalații sanitare, băi și bucătării.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>`
+    },
+    {
+        title: "Instalații Termice",
+        description: "Instalare și service pentru sisteme de încălzire și centrale termice.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+        </svg>`
+    },
+    {
+        title: "Verificări Tehnice",
+        description: "Verificări periodice și întreținere preventivă pentru toate tipurile de instalații.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>`
+    }
+];
+---
+
+<section id="servicii" class="services">
+    <PlumbingBackground className="background-overlay" />
+    <div class="container">
+        <h2>Serviciile Noastre</h2>
+        <div class="services-grid">
+            {services.map(service => (
+                <ServiceCard 
+                    title={service.title}
+                    description={service.description}
+                    icon={service.icon}
+                />
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .services {
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .background-overlay {
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: rgb(var(--dark));
+        margin-bottom: 3rem;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

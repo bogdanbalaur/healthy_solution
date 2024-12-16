@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnreBanner from '../components/AnreBanner.astro';
+import Header from '../components/Header.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="AC Healthy Solutions SRL - Servicii Profesionale de Instalații">
+    <AnreBanner />
+    <Header />
+    <main>
+        <About />
+        <Services />
+        <Contact />
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AC Healthy Solutions SRL. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+</Layout>
+
+<style>
+    footer {
+        background-color: rgb(var(--dark));
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 0;
+        opacity: 0.8;
+    }
+</style>

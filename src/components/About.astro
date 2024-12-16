@@ -1,0 +1,134 @@
+---
+import PlumbingBackground from './PlumbingBackground.astro';
+---
+<section id="despre" class="about">
+    <PlumbingBackground className="background-overlay" />
+    <div class="container">
+        <h2>Despre Noi</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="lead">Cu peste 15 ani de experiență în domeniul instalațiilor, suntem alegerea de încredere pentru servicii profesionale de instalații în România.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Expertiză Dovedită</span>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Prețuri Competitive</span>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Lucrăm doar cu materiale și echipamente de top</span>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Respectăm termenele și cerințele tale</span>
+                    </div>
+                </div>
+
+                <p>Echipa noastră de profesioniști calificați este pregătită să răspundă prompt la orice solicitare, oferind soluții eficiente și durabile pentru toate nevoile dumneavoastră în materie de instalații.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about {
+        padding: 4rem 0;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .background-overlay {
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: rgb(var(--dark));
+        margin-bottom: 3rem;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: rgb(var(--dark));
+        margin-bottom: 2rem;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+        background-color: rgba(248, 249, 250, 0.9);
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: translateY(-2px);
+    }
+
+    .feature svg {
+        width: 24px;
+        height: 24px;
+        color: rgb(var(--primary));
+        flex-shrink: 0;
+    }
+
+    .feature span {
+        font-weight: 500;
+        color: rgb(var(--dark));
+    }
+
+    p {
+        line-height: 1.7;
+        color: #666;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .features {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
